@@ -1,0 +1,16 @@
+<h1>Список персонажей Зверополиса</h1>
+
+<ul>
+    {% for character in characters %}
+        <li>
+            <h2>{{ character.name }}</h2>
+            <p>{{ character.species }}</p>
+            <p>{{ character.description }}</p>
+            <img src="{{ character.image.url }}" alt="{{ character.name }}" height="200">
+        </li>
+    {% empty %}
+        <li>Нет персонажей для отображения</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add_character' %}">Добавить персонажа</a>
