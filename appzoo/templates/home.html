@@ -55,7 +55,7 @@
                 <div class="col col-lg-9 col-xl-10">
                     <div class="card rounded-3">
                         <div class="card-body p-4">
-                            <h4 class="text-center my-3 pb-3">To Do App</h4>
+                            <h4 class="text-center my-3 pb-3">Zoo</h4>
                             <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2"
                                 method="post" action="{% url 'add_tasks' %}">
                                 {% csrf_token %}
@@ -80,7 +80,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">No.</th>
-                                        <th scope="col">Todo item</th>
+                                        <th scope="col">Animals</th>
                                         <th scope="col">Done</th>
                                         <th scope="col">Created</th>
                                         <th scope="col">Actions</th>
@@ -95,7 +95,7 @@
                                     {% for todo in task %}
                                     <tr
                                         style="{% if todo.complete is not False %} text-decoration: line-through; {% endif %}">
-                                        <th scope="row">{{ forloop.counter }}</th>
+                                        <th scope="row"> <img src="{{todo}}" alt="Flowers in Chania"> </th>
                                         <td>{{ todo.title }}</td>
                                         <td>{{ todo.complete }}</td>
                                         <td>{{ todo.created }}</td>
